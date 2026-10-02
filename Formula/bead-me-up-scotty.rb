@@ -46,9 +46,9 @@ class BeadMeUpScotty < Formula
     begin
       30.times do
         sleep 1
-        break if quiet_system "curl", "-sf", "http://127.0.0.1:#{port}/"
+        break if quiet_system "curl", "-sfL", "http://localhost:#{port}/"
       end
-      assert_match "<html", shell_output("curl -sf http://127.0.0.1:#{port}/")
+      assert_match "<html", shell_output("curl -sfL http://localhost:#{port}/")
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
