@@ -44,13 +44,11 @@ class BeadMeUpScotty < Formula
     ENV["BEADS_DEMO"] = "1"
     pid = spawn bin/"scotty", "--no-open", "--port", port.to_s
     begin
-      output = ""
       30.times do
         sleep 1
-        output = shell_output("curl -s http://127.0.0.1:#{port}/ 2>&1", nil)
-        break if output.include?("<html")
+        break if quiet_system "curl", "-sf", "http://127.0.0.1:#{port}/"
       end
-      assert_match "<html", output
+      assert_match "<html", shell_output("curl -sf http://127.0.0.1:#{port}/")
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
