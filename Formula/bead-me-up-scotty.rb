@@ -1,8 +1,8 @@
 class BeadMeUpScotty < Formula
   desc "Local web UI for the beads (bd) issue tracker"
   homepage "https://beadmeupscotty.com"
-  url "https://github.com/brendan-appstart/bead-me-up-scotty/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "8146308b54ba05eb5b4c2d67b30984d2e06147037d6954ade79f96c8b8d4cfc3"
+  url "https://github.com/brendan-appstart/bead-me-up-scotty/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "0f644e58aae588738d1a18bb8c5bdd8fc58877bd66cad7b64ebb6141387be6b1"
   license "MIT"
   head "https://github.com/brendan-appstart/bead-me-up-scotty.git", branch: "main"
 
